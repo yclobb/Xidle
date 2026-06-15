@@ -59,6 +59,8 @@
 
 
 I made this game because I am fascinated with incremental and idle games, particularly titles like Revolution Idle, Antimatter Dimensions, and Cell to Singularity. I was really interested in adding an RNG element to the idle loop—even though on the surface they might not seem compatible, I wanted to see if I could make them work together. Although the game is unfinished at the time of shipping, I plan to continue developing and polishing it after the hackathon.
+
+<br />
 <img width="273" height="193" alt="image" src="https://github.com/user-attachments/assets/2e7fb50c-7220-483a-9d05-805e7906829a" />
 <img width="687" height="426" alt="Screenshot 2026-06-15 141652" src="https://github.com/user-attachments/assets/458f0a93-8792-41c8-87ad-745dc441dc7f" />
 
