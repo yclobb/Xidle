@@ -53,6 +53,9 @@
 <!-- ABOUT -->
 ## About The Project
 
+AI USAGE:
+Some AI was used in learning how to use GDScript and making some parts of code, as I am a complete beginner to GDScript. It was also used for some debugging in my code.
+
 - This is a plain old idle game with a twist. It's based on your luck.
 - You roll a die to gain DP or Dice Points, upgrading aspects of your luck to get better combos to boost DP gain
 - Thats About It for Now
