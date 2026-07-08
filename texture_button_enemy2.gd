@@ -56,7 +56,7 @@ func _process(delta: float) -> void:
 		damage = 0
 	enemyhealthbar.value = enemyhealth
 	if enemyhealth > 0 and enemyhealth <= 1550:
-		enemyhealth += 85*delta
+		enemyhealth += 85 * delta
 		if enemyhealth >= 1550:
 			enemyhealth = 1550
 func _on_pressed() -> void:
@@ -71,13 +71,13 @@ func _on_pressed() -> void:
 	if enemyhealth <= 0:
 		atktimer.stop()
 		var randfloat: float = randf()
-		if randfloat < 0.5:
+		if randfloat < 0.34:
 			tempbonusesdegree = 1
-			if randfloat < 0.25:
+			if randfloat < 0.2:
 				tempbonusesdegree = 2
-				if randfloat < 0.1:
+				if randfloat < 0.07:
 					tempbonusesdegree = 3
-					if randfloat < 0.02:
+					if randfloat < 0.03:
 						tempbonusesdegree = 4 
 		if tempbonusesdegree > bonusesdegree:
 			var oldbonusfactor = _bonus_factor(bonusesdegree)
