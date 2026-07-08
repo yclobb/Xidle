@@ -48,10 +48,17 @@ func _ready() -> void:
 	disabled = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	var rngpoints = Engine.get_meta("rngscore", 0)
+	var shouldshow = rngpoints >= 1
+	visible = shouldshow
+	disabled = not shouldshow
+	if not shouldshow:
+		return
+	rollexponent = Engine.get_meta("rollexponent", 1.0)
 	highestroll = Engine.get_meta("biggestroll", 0)
 	dmgmult = Engine.get_meta("dmgmult", 1.0)
 	if highestroll > 1:
-		damage = int(floor(log(highestroll)/log(100 - pow(6, Engine.get_meta("formulamult", 1.0))))) 
+		damage = int(floor(log(highestroll) / log(maxf(100.0 - pow(6.0, float(Engine.get_meta("formulamult", 1.0))), 2.0))))
 	else:
 		damage = 0
 	enemyhealthbar.value = enemyhealth
