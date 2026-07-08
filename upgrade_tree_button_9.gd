@@ -16,7 +16,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	digits = str(pricelist[upgradelevel]).length() - 1
+	digits = int(floor(log(pricelist[upgradelevel]) / log(10.0)))
 	score = Engine.get_meta("rollscore", 0)
 	rollmult = Engine.get_meta("rollmultupgrade", 1)
 	lis = Engine.get_meta("upgradeboughtlist", [])
@@ -26,11 +26,12 @@ func _process(_delta: float) -> void:
 		dmgmult = 1
 	Engine.set_meta("dmgmult", dmgmult)
 	if upgradelevel < 3:
-		text = "Upgrade Tree: 1.9\nMore DMG\nDP Boosts Damage Further\nUpgrade " + str(upgradelevel) + "/3\nPrice: " +  str(snappedf(pricelist[upgradelevel] / pow(10, digits), 0.01)) + "e" + str(digits) + "\nCurrently: " + str(dmgmult) + "X"
+		var price_text = str(snappedf(pricelist[upgradelevel] / pow(10, digits), 0.01)) + "e" + str(digits)
+		text = "Upgrade Tree: 1.9\nMore DMG\nDP Boosts Damage Further\nUpgrade " + str(upgradelevel) + "/3\nPrice: " + price_text + "\nCurrently: " + str(snappedf(dmgmult, 0.01)) + "X"
 		remove_theme_color_override("font_color")
 	elif upgradelevel == 3:
 		add_theme_color_override("font_color", Color.GREEN)
-		text = "Upgrade Tree: 1.9\nMore DMG\nDP Boosts Damage Further\nUpgrade MAX/3\nPrice: N/A\nCurrently: " + str(dmgmult)
+		text = "Upgrade Tree: 1.9\nMore DMG\nDP Boosts Damage Further\nUpgrade MAX/3\nPrice: N/A\nCurrently: " + str(snappedf(dmgmult, 0.01)) + "X"
 	if lis.size() < 8:
 		visible = false 
 		disabled = true
