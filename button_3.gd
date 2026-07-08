@@ -14,18 +14,13 @@ func _process(_delta: float) -> void:
 	score = Engine.get_meta("rollscore", 0)
 	Engine.set_meta("diceamount", diceamount)
 	digits = len(str(price)) - 1
-	if  price > 1000000:
-		if diceamount < 5:
-			text = "Dice Amount\nPrice:" + str(snappedf(price / pow(10, digits), 0.01)) + "e" + str(digits) + "\nCurrently: " + str(diceamount)
-		else:
-			add_theme_color_override("font_color", Color.GREEN)
-			text = "Dice Amount\nPrice:" + str(snappedf(price / pow(10, digits), 0.01)) + "e" + str(digits) + "\nCurrently: MAX"
+	if diceamount >= 5:
+		add_theme_color_override("font_color", Color.GREEN)
+		text = "Dice Amount\nPrice: N/A\nCurrently: MAX"
+	elif price > 1000000:
+		text = "Dice Amount\nPrice:" + str(snappedf(price / pow(10, digits), 0.01)) + "e" + str(digits) + "\nCurrently: " + str(diceamount)
 	else:
-		if diceamount < 5:
-			text = "Dice Amount\nPrice:" + str(price) + "\nCurrently: " + str(diceamount)
-		else:
-			add_theme_color_override("font_color", Color.GREEN)
-			text = "Dice Amount\nPrice:" + str(price) + "\nCurrently: MAX"
+		text = "Dice Amount\nPrice:" + str(price) + "\nCurrently: " + str(diceamount)
 
 func _on_pressed() -> void:
 	if score >= price:
