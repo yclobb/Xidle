@@ -14,6 +14,8 @@ Some AI was used in learning how to use GDScript and making some parts of code, 
 I made this game because I am fascinated with incremental and idle games, particularly titles like Revolution Idle, Antimatter Dimensions, and Cell to Singularity. I was really interested in adding an RNG element to the idle loop—even though on the surface they might not seem compatible, I wanted to see if I could make them work together. Although the game is unfinished at the time of shipping, I plan to continue developing and polishing it after the hackathon.
 
  - NEW FEATURES ON RE-SHIP:
+ - FIXED ALOT OF BUGS
+ - DEBUG MODE (CNTRL + N) for MORE DP for experimentation.
  - ACTUALLY ADDED PRESTIGE AND PRESTIGE ENEMY
 
 <br />
