@@ -15,7 +15,7 @@ I made this game because I am fascinated with incremental and idle games, partic
 
  - NEW FEATURES ON RE-SHIP:
  - FIXED ALOT OF BUGS
- - DEBUG MODE (CNTRL + N) for MORE DP for experimentation.
+ - DEBUG (N) for MORE DP for experimentation.
  - ACTUALLY ADDED PRESTIGE AND PRESTIGE ENEMY
 
 <br />
